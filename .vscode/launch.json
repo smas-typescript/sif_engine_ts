@@ -1,0 +1,32 @@
+{
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "type": "chrome",
+                "request": "launch",
+                "name": "Launch Chrome against localhost",
+                "runtimeExecutable": "/usr/bin/google-chrome-stable",
+                "url": "http://localhost:9094",
+                "webRoot": "${workspaceRoot}/dist/server",
+                "sourceMaps": true
+            },
+            {
+                "type": "chrome",
+                "request": "attach",
+                "name": "Launch Chrome from command line first",
+                "port":9222,
+                "url": "http://localhost:9094",
+                "webRoot": "${workspaceRoot}/dist/server",
+                "sourceMaps": true
+            },
+            {
+                "type": "node",
+                "request": "launch",
+                "name": "Launch Program",
+                "program": "${workspaceRoot}/test/app.ts",
+                "outFiles": [
+                    "${workspaceRoot}/dist/server/**/*.js"
+                ]
+            },
+        ]
+    }

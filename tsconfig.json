@@ -1,0 +1,28 @@
+{
+    "compilerOptions": {
+        "module":"commonjs",
+        "target": "es6",                        // ES5 is valid for all current browsers, es6 is needed for Map, Set etc., see: https://www.ryadel.com/en/visual-studio-2015-fix-typescript-ts2304-compilation-errors/
+        "strictNullChecks": true,               // This is void safeness for TypeScript
+        "noImplicitAny": false,
+        "noImplicitReturns": true,              // Always implement the content of a return value
+        "noEmitOnError": true,                  // Do not emit code when there are errors in the TypeScript
+        "noFallthroughCasesInSwitch": true,     // Be sure cases do not fall through in switch statements
+        "sourceMap": true,                      // Be able to let debugger step through TypeScript code
+        "outDir": "/dist/server",               // This output directory should be coherent with the one applied in webpack.config.js
+        "removeComments": true,
+        "baseUrl": ".",
+        // Relative to "baseUrl, see: https://www.typescriptlang.org/docs/handbook/module-resolution.html"
+        "paths": {
+          "*": [
+            "*",
+            "external_libraries/smas/communication/general/*",
+            "external_libraries/smas/communication/sif/*",
+            "external_libraries/smas/communication/websocket/*",
+            "external_libraries/smas/system_interface_framework/core/*",
+            "external_libraries/smas/system_interface_framework/web_application/*"
+          ]
+        },
+        "experimentalDecorators": true          // To get rid of the warnings in the class-transformer library
+    }
+}
+
